@@ -90,7 +90,7 @@ const ContentScheduler = () => {
                 List
               </button>
               <button
-                onClick={() => setShowUploader(!showUploader)}  // Correct toggle behavior
+                onClick={() => setViewMode('queue')}
                 className="border border-purple-600 text-purple-600 px-4 py-2 rounded transform transition-transform hover:scale-105 hover:bg-purple-600 hover:text-white"
               >
                 +
