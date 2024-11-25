@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import VideoUploader from './Queue_section_helper/VideoUploader'
+import VideoUploader from './Queue_section_helper/VideoUploader/VideoUploader'
 import CardSet from './Queue_section_helper/CardSet'
 
 const QueueSection = ({
@@ -24,38 +24,43 @@ const QueueSection = ({
     setIsClicked(false) // Reset the '+' button state
     setViewMode(mode) // Set the desired view mode (grid or list)
   }
+
   return (
-    <div className="bg-indigo-300 p-6 rounded-lg shadow-md">
-      <div className="mb-4 flex items-center justify-between">
-        <h2 className="text-lg font-bold">
+    <div className='bg-indigo-300 p-6 rounded-lg shadow-md'>
+      <div className='mb-4 flex items-center justify-between'>
+        <h2 className='text-lg font-bold'>
           Currently Viewing:{' '}
-          <span className="text-blue-800">
+          <span className='text-blue-800'>
             {viewMode === 'queue' ? 'Upload Video' : 'Queue'}
           </span>
         </h2>
-        <div className="flex items-center space-x-4">
+        <div className='flex items-center space-x-4'>
           <button
             className={`${
-              viewMode === 'grid' ? 'bg-yellow-300' : 'bg-indigo-400'
-            } px-4 py-2 rounded transform transition-transform hover:scale-105 hover:shadow-[inset_0_0_0_2px_rgba(168,85,247,1)]`}
+              viewMode === 'grid'
+                ? 'bg-black text-white' // Active state
+                : 'border border-black text-black hover:bg-black hover:text-white' // Default state
+            } px-4 py-2 rounded transform transition-transform hover:scale-105`}
             onClick={() => handleOtherClick('grid')} // Call handleOtherClick for grid
           >
-            Grid
+            <span> Grid</span>
           </button>
           <button
             className={`${
-              viewMode === 'list' ? 'bg-yellow-300' : 'bg-indigo-400'
-            } px-4 py-2 rounded transform transition-transform hover:scale-105 hover:shadow-[inset_0_0_0_2px_rgba(168,85,247,1)]`}
+              viewMode === 'list'
+                ? 'bg-black text-white' // Active state
+                : 'border border-black text-black hover:bg-black hover:text-white' // Default state
+            } px-4 py-2 rounded transform transition-transform hover:scale-105`}
             onClick={() => handleOtherClick('list')} // Call handleOtherClick for list
           >
-            List
+            <span> List</span>
           </button>
           <button
             onClick={handleQueueClick} // Call handleQueueClick for '+'
             className={`px-4 py-2 rounded transform transition-transform hover:scale-105 ${
               isClicked
                 ? 'bg-yellow-300 text-black'
-                : 'border border-blue-800 text-blue-600 hover:bg-blue-600 hover:text-white'
+                : 'border border-blue-800 text-blue-600 hover:bg-yellow-300 hover:text-black'
             }`}
           >
             +
@@ -74,12 +79,12 @@ const QueueSection = ({
         />
       ) : (
         <>
-          <p className="text-gray-500 mb-6">Videos to be posted</p>
+          <p className='text-gray-500 mb-6'>Videos to be posted</p>
           <CardSet viewMode={viewMode} />
         </>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default QueueSection;
+export default QueueSection

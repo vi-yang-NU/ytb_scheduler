@@ -10,7 +10,7 @@ const DashboardSection = () => {
           <h3 className="text-lg mb-4">Last week CTR average</h3>
           <div className="flex items-center space-x-2">
             <p className="text-5xl font-bold">13%</p>
-            <span className="text-yellow-500 text-3xl">▲</span>
+            <span className="text-green-400 text-3xl">▲</span>
           </div>
         </div>
 
@@ -19,7 +19,7 @@ const DashboardSection = () => {
           <h3 className="text-lg mb-4">Recently Post Stats</h3>
           <div className="flex items-center space-x-2">
             <p className="text-5xl font-bold">200%</p>
-            <span className="text-yellow-500 text-3xl">▲</span>
+            <span className="text-green-400 text-3xl">▲</span>
           </div>
         </div>
 
