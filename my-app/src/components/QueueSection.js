@@ -1,7 +1,6 @@
 import React from 'react';
-import GridCard from './GridCard';
-import ListCard from './ListCard';
 import VideoUploader from './VideoUploader';
+import CardSet from './CardSet';
 
 const QueueSection = ({
   viewMode,
@@ -11,14 +10,17 @@ const QueueSection = ({
   handleDragOver,
   handleFileSelect,
   currentStep,
-  setCurrentStep, // Accept setCurrentStep
+  setCurrentStep,
   nextStep,
 }) => {
   return (
     <div className="bg-white p-6 rounded-lg shadow-md">
       <div className="mb-4 flex items-center justify-between">
         <h2 className="text-lg font-bold">
-          Currently Viewing: <span className="text-blue-500">Queue</span>
+          Currently Viewing:{" "}
+          <span className="text-blue-500">
+            {viewMode === 'queue' ? 'Upload Video' : 'Queue'}
+          </span>
         </h2>
         <div className="flex items-center space-x-4">
           <button
@@ -52,19 +54,13 @@ const QueueSection = ({
           handleDragOver={handleDragOver}
           handleFileSelect={handleFileSelect}
           currentStep={currentStep}
-          setCurrentStep={setCurrentStep} // Pass setCurrentStep
+          setCurrentStep={setCurrentStep}
           nextStep={nextStep}
         />
       ) : (
         <>
           <p className="text-gray-500 mb-6">Videos to be posted</p>
-          <div
-            className={`grid ${
-              viewMode === 'grid' ? 'grid-cols-3' : 'grid-cols-1'
-            } gap-6`}
-          >
-            {viewMode === 'grid' ? <GridCard /> : <ListCard isDraft={isDraft} />}
-          </div>
+          <CardSet viewMode={viewMode} />
         </>
       )}
     </div>
