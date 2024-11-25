@@ -2,7 +2,7 @@ import React from 'react';
 
 const GridCard = ({ platform, title, description, postingDate, thumbnail }) => {
   return (
-    <div className='border border-gray-300 p-6 rounded-lg shadow-sm relative group transform transition-transform hover:scale-105 hover:shadow-[inset_0_0_0_2px_rgba(168,85,247,1)]'>
+    <div className='border border-blue-900 p-6 rounded-lg shadow-sm relative group transform transition-transform hover:scale-105 hover:shadow-[inset_0_0_0_2px_rgba(168,85,247,1)] hover:border-blue-900 bg-black'>
       {/* Thumbnail */}
       <div className='relative w-full h-0 pb-[56.25%] z-0 group'>
         <img
@@ -24,7 +24,7 @@ const GridCard = ({ platform, title, description, postingDate, thumbnail }) => {
       {/* Edit Button */}
       <div className='absolute top-2 right-2 z-20'>
         <div className='relative opacity-0 group-hover:opacity-100 transition-opacity duration-200'>
-          <button className='px-2 py-1 rounded transition-all duration-200 border border-purple-600 text-purple-600 bg-transparent hover:bg-purple-600 hover:text-white'>
+          <button className='px-2 py-1 rounded transition-all duration-200 border border-blue-900 text-blue-900 bg-transparent hover:bg-blue-900 hover:text-white'>
             Edit
           </button>
         </div>

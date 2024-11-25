@@ -29,8 +29,7 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-200 p-6">
-      <h2 className="text-center text-xl font-bold mb-6">Content Creation Scheduler</h2>
+    <div className="min-h-screen bg-blue-900 p-6">
       <div className="max-w-[80%] mx-auto">
         <DashboardSection />
         <QueueSection
