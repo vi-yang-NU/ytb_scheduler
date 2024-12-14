@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import DashboardSection from './components/DashboardSection';
 import QueueSection from './components/QueueSection';
+import Navigation from './components/navigation';
 
 const App = () => {
   const [viewMode, setViewMode] = useState('grid');
@@ -30,19 +31,26 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-blue-900 p-6">
-      <div className="max-w-[80%] mx-auto">
-        <DashboardSection />
-        <QueueSection
-          viewMode={viewMode}
-          setViewMode={setViewMode}
-          isDraft={isDraft}
-          handleDrop={handleDrop}
-          handleDragOver={handleDragOver}
-          handleFileSelect={handleFileSelect}
-          currentStep={currentStep}
-          setCurrentStep={setCurrentStep} // Pass setCurrent
-          nextStep={nextStep}
-        />
+      <div className="grid grid-cols-10 gap-4 max-w-full mx-auto h-full">
+        {/* Left 10% Navigation */}
+        <div className="col-span-1 h-full">
+          <Navigation />
+        </div>
+        {/* Right 80% Main Content */}
+        <div className="col-span-9">
+          <DashboardSection />
+          <QueueSection
+            viewMode={viewMode}
+            setViewMode={setViewMode}
+            isDraft={isDraft}
+            handleDrop={handleDrop}
+            handleDragOver={handleDragOver}
+            handleFileSelect={handleFileSelect}
+            currentStep={currentStep}
+            setCurrentStep={setCurrentStep}
+            nextStep={nextStep}
+          />
+        </div>
       </div>
     </div>
   );
