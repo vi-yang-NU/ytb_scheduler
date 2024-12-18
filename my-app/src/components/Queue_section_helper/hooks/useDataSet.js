@@ -5,6 +5,10 @@ import Papa from 'papaparse';
 const useDataSet = (csvPath) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  
+  console.log('Fetching:', csvPath);
+  console.log('State before:', { data, loading });
+
 
   useEffect(() => {
     fetch(csvPath)

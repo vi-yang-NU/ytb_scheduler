@@ -1,6 +1,6 @@
 // components/CardSet.js
 import React from 'react';
-import useDataSet from '../../hooks/useDataSet';
+import useDataSet from './hooks/useDataSet';
 import GridCard from './GridCard';
 import ListCard from './ListCard';
 
