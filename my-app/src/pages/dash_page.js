@@ -31,14 +31,14 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-blue-900">
+    <div className="min-h-screen  bg-[#2E2850]">
       <div className="grid grid-cols-10 gap-4 max-w-full mx-auto h-full">
         {/* Left 10% Navigation */}
         <div className="col-span-1 h-full">
           <Navigation />
         </div>
         {/* Right 80% Main Content */}
-        <div className="col-span-9">
+        <div className="col-span-9 relative">
           <DashboardSection />
           <QueueSection
             viewMode={viewMode}

@@ -2,7 +2,7 @@ import React from 'react';
 
 const ListCard = ({ platform, title, description, postingDate, thumbnail }) => {
   return (
-    <div className='border border-gray-300 p-6 rounded-lg shadow-sm relative group flex items-center justify-between transition-transform hover:scale-105 hover:shadow-[inset_0_0_0_2px_rgba(168,85,247,1)] w-full max-w-4xl mx-auto bg-black text-white transition-all duration-300 hover:bg-gray-200 hover:text-black'>
+    <div className='border border-indigo-600 p-6 rounded-lg shadow-sm relative group flex items-center justify-between transition-transform hover:scale-105 w-full max-w-4xl mx-auto bg-black text-white hover:border-white'>
       {/* Date Posting */}
       <div className='text-center flex-1'>
         <p className='mb-2'>{postingDate}</p>

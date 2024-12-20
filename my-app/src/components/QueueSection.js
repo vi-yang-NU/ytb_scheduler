@@ -27,20 +27,20 @@ const QueueSection = ({
 
   return (
     <div className='pr-12 pt-6 pb-6'>
-      <div className='bg-indigo-300 p-6 rounded-lg shadow-md'>
+      <div className='bg-indigo-900 p-6 rounded-lg shadow-md'>
         <div className='mb-4 flex items-center justify-between'>
-          <h2 className='text-lg font-bold'>
+          <h2 className='text-lg font-bold text-gray-400'>
             Currently Viewing:{' '}
-            <span className='text-blue-800'>
-              {viewMode === 'queue' ? 'Upload Video' : 'Queue'}
+            <span className='text-indigo-400'>
+              {viewMode === 'queue' ? 'Upload Video' : 'Videos to be posted'}
             </span>
           </h2>
           <div className='flex items-center space-x-4'>
             <button
               className={`${
                 viewMode === 'grid'
-                  ? 'bg-black text-white' // Active state
-                  : 'border border-black text-black hover:bg-black hover:text-white' // Default state
+                  ? 'bg-black text-white border-white' // Active state
+                  : 'border border-black text-white hover:bg-black hover:text-white hover:border-white' // Default state
               } px-4 py-2 rounded transform transition-transform hover:scale-105`}
               onClick={() => handleOtherClick('grid')} // Call handleOtherClick for grid
             >
@@ -50,7 +50,7 @@ const QueueSection = ({
               className={`${
                 viewMode === 'list'
                   ? 'bg-black text-white' // Active state
-                  : 'border border-black text-black hover:bg-black hover:text-white' // Default state
+                  : 'border border-black text-white hover:bg-black hover:text-white hover:border-white' // Default state
               } px-4 py-2 rounded transform transition-transform hover:scale-105`}
               onClick={() => handleOtherClick('list')} // Call handleOtherClick for list
             >
@@ -61,7 +61,7 @@ const QueueSection = ({
               className={`px-4 py-2 rounded transform transition-transform hover:scale-105 ${
                 isClicked
                   ? 'bg-yellow-300 text-black'
-                  : 'border border-blue-800 text-blue-600 hover:bg-yellow-300 hover:text-black'
+                  : 'border border-black text-white hover:bg-yellow-300 hover:text-black hover:border-white'
               }`}
             >
               +
@@ -80,7 +80,6 @@ const QueueSection = ({
           />
         ) : (
           <>
-            <p className='text-gray-500 mb-6'>Videos to be posted</p>
             <CardSet viewMode={viewMode} />
           </>
         )}

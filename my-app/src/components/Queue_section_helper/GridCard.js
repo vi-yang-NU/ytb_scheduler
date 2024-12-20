@@ -2,7 +2,7 @@ import React from 'react';
 
 const GridCard = ({ platform, title, description, postingDate, thumbnail }) => {
   return (
-    <div className='border border-blue-900 p-6 rounded-lg shadow-sm relative group transform transition-transform hover:scale-105 hover:shadow-[inset_0_0_0_2px_rgba(168,85,247,1)] hover:border-blue-900 bg-black'>
+    <div className='border border-indigo-600 p-6 rounded-lg shadow-sm relative group transform transition-transform hover:scale-105 hover:border-white bg-indigo-700'>
       {/* Thumbnail */}
       <div className='relative w-full h-0 pb-[56.25%] z-0 group'>
         <img

@@ -1,8 +1,8 @@
-// components/CardSet.js
 import React from 'react';
 import useDataSet from './hooks/useDataSet';
 import GridCard from './GridCard';
 import ListCard from './ListCard';
+import CalendarView from './CalendarView'; // Import your calendar view component
 
 const CardSet = ({ viewMode = 'grid' }) => {
   const { data, loading } = useDataSet('/csv/Schedule.csv'); // Destructure data and loading
@@ -17,23 +17,11 @@ const CardSet = ({ viewMode = 'grid' }) => {
     return <p className="text-center text-gray-500">No data available.</p>;
   }
 
-  return (
-    <div
-      className={`p-4 ${
-        viewMode === 'grid' ? 'grid grid-cols-3 gap-4' : 'flex flex-col gap-4'
-      }`}
-    >
-      {data.map((item, index) => {
-        console.log(`Rendering card #${index + 1}`);
-        console.log('GridCard item data:', {
-          Platform: item.Platform,
-          Title: item.Title,
-          Description: item.Description,
-          Posting_date: item.Posting_date,
-          Thumbnail: item.Thumbnail,
-        });
-
-        return viewMode === 'grid' ? (
+  // Define views using the tuple method
+  const views = {
+    grid: () => (
+      <div className="grid grid-cols-3 gap-4">
+        {data.map((item, index) => (
           <GridCard
             key={index}
             platform={item.Platform}
@@ -41,8 +29,13 @@ const CardSet = ({ viewMode = 'grid' }) => {
             description={item.Description}
             postingDate={item.Posting_date}
             thumbnail={`/thumbnails/${item.Thumbnail}.png`} // Correct thumbnail path
-            />
-        ) : (
+          />
+        ))}
+      </div>
+    ),
+    list: () => (
+      <div className="flex flex-col gap-4">
+        {data.map((item, index) => (
           <ListCard
             key={index}
             platform={item.Platform}
@@ -51,8 +44,18 @@ const CardSet = ({ viewMode = 'grid' }) => {
             postingDate={item.Posting_date}
             thumbnail={`/thumbnails/${item.Thumbnail}.png`}
           />
-        );
-      })}
+        ))}
+      </div>
+    ),
+    calendar: () => (
+      <CalendarView data={data} /> // Pass data to the CalendarView component
+    ),
+  };
+
+  // Render based on the selected view mode
+  return (
+    <div className="p-4">
+      {views[viewMode] ? views[viewMode]() : <p>Invalid view mode</p>}
     </div>
   );
 };
