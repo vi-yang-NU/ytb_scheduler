@@ -3,6 +3,14 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      transitionDuration: {
+        100: '100ms' // Add lingering effect duration
+      },
+
+      boxShadow: {
+        glow: '0 0 20px 5px rgba(128, 90, 213, 0.5)' // Custom glow shadow
+      },
+
       keyframes: {
         'circle-fill': {
           '0%': {

@@ -19,7 +19,7 @@ const Step2Title = ({ setTitle, setAltTitles, skipStep, setIsStepValid }) => {
 
   return (
     <div className="mx-auto w-2/3 text-center">
-      <h2 className="text-xl font-bold mb-4">What is the name of this video?</h2>
+      <h2 className="text-xl text-white font-bold mb-4">What is the name of this video?</h2>
       <input
         type="text"
         value={mainTitle}
@@ -30,7 +30,7 @@ const Step2Title = ({ setTitle, setAltTitles, skipStep, setIsStepValid }) => {
         className="w-full p-2 border rounded mb-4"
         placeholder="Enter main title"
       />
-      <h3 className="text-lg mb-4">Alternative Titles</h3>
+      <h3 className="text-lg text-white mb-4">Alternative Titles</h3>
       {altTitles.map((title, index) => (
         <input
           key={index}

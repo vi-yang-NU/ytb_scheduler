@@ -1,27 +1,11 @@
 import React, { useState } from 'react'
-import VideoUploader from './Queue_section_helper/VideoUploader/VideoUploader'
 import CardSet from './Queue_section_helper/CardSet'
 
 const QueueSection = ({
   viewMode,
-  setViewMode,
-  isDraft,
-  handleDrop,
-  handleDragOver,
-  handleFileSelect,
-  currentStep,
-  setCurrentStep,
-  nextStep
+  setViewMode
 }) => {
-  const [isClicked, setIsClicked] = useState(false) // State to track if the button is clicked
-
-  const handleQueueClick = () => {
-    setIsClicked(true) // Highlight the '+' button
-    setViewMode('queue') // Switch to "Upload Video" mode
-  }
-
   const handleOtherClick = mode => {
-    setIsClicked(false) // Reset the '+' button state
     setViewMode(mode) // Set the desired view mode (grid or list)
   }
 
@@ -32,7 +16,7 @@ const QueueSection = ({
           <h2 className='text-lg font-bold text-gray-400'>
             Currently Viewing:{' '}
             <span className='text-indigo-400'>
-              {viewMode === 'queue' ? 'Upload Video' : 'Videos to be posted'}
+              {viewMode === 'grid' ? 'Grid View' : 'List View'}
             </span>
           </h2>
           <div className='flex items-center space-x-4'>
@@ -44,7 +28,7 @@ const QueueSection = ({
               } px-4 py-2 rounded transform transition-transform hover:scale-105`}
               onClick={() => handleOtherClick('grid')} // Call handleOtherClick for grid
             >
-              <span> Grid</span>
+              <span>Grid</span>
             </button>
             <button
               className={`${
@@ -54,35 +38,13 @@ const QueueSection = ({
               } px-4 py-2 rounded transform transition-transform hover:scale-105`}
               onClick={() => handleOtherClick('list')} // Call handleOtherClick for list
             >
-              <span> List</span>
-            </button>
-            <button
-              onClick={handleQueueClick} // Call handleQueueClick for '+'
-              className={`px-4 py-2 rounded transform transition-transform hover:scale-105 ${
-                isClicked
-                  ? 'bg-yellow-300 text-black'
-                  : 'border border-black text-white hover:bg-yellow-300 hover:text-black hover:border-white'
-              }`}
-            >
-              +
+              <span>List</span>
             </button>
           </div>
         </div>
 
-        {viewMode === 'queue' ? (
-          <VideoUploader
-            handleDrop={handleDrop}
-            handleDragOver={handleDragOver}
-            handleFileSelect={handleFileSelect}
-            currentStep={currentStep}
-            setCurrentStep={setCurrentStep}
-            nextStep={nextStep}
-          />
-        ) : (
-          <>
-            <CardSet viewMode={viewMode} />
-          </>
-        )}
+        {/* Display CardSet */}
+        <CardSet viewMode={viewMode} />
       </div>
     </div>
   )

@@ -43,7 +43,6 @@ const Dashboard = () => {
           <QueueSection
             viewMode={viewMode}
             setViewMode={setViewMode}
-            isDraft={isDraft}
             handleDrop={handleDrop}
             handleDragOver={handleDragOver}
             handleFileSelect={handleFileSelect}

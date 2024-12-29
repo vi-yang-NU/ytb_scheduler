@@ -17,7 +17,7 @@ const Step1UploadVideo = ({
   return (
     <div
       className={`relative mx-auto w-1/3 transition-transform duration-300 hover:scale-105 ${
-        isDragging ? 'border border-blue-500 bg-blue-100' : 'border border-gray-300'
+        isDragging ? 'border border-indigo-500 bg-indigo-100' : 'border border-indigo-300'
       }`}
       onDrop={handleFileDrop}
       onDragOver={handleDragOver}
@@ -25,7 +25,7 @@ const Step1UploadVideo = ({
     >
       <div className="h-40 flex">
         {/* Left Side */}
-        <div className="w-1/2 bg-gray-200 flex flex-col items-center justify-center group">
+        <div className="w-1/2 bg-gray-900 flex flex-col items-center justify-center group">
           <label className="flex flex-col items-center justify-center cursor-pointer">
             <input
               type="file"
@@ -40,19 +40,19 @@ const Step1UploadVideo = ({
                 className="w-8 h-8 object-contain transition-transform"
               />
             </div>
-            <p className="text-black text-sm mt-2">Or click to upload</p>
+            <p className="text-white text-sm mt-2">Or click to upload</p>
           </label>
         </div>
 
         {/* Right Side */}
         <div
-          className={`w-1/2 bg-gray-200 flex items-center justify-center transition-all ${
+          className={`w-1/2 bg-gray-900 flex items-center justify-center transition-all ${
             isDragging
-              ? 'outline outline-4 outline-blue-500'
+              ? 'outline outline-4 outline-indigo-500'
               : 'group-hover:outline group-hover:outline-2 group-hover:outline-gray-400'
           }`}
         >
-          <p className="text-black text-lg font-bold">Drop file here</p>
+          <p className="text-white text-lg ">Drop file here</p>
         </div>
       </div>
     </div>

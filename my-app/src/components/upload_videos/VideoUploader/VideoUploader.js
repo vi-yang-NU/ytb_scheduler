@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import ProgressBar from '../ProgressBar'
+import ProgressBar from '../../Queue_section_helper/ProgressBar'
+import UploadingBar from '../../Queue_section_helper/UploadingBar'
+
 import Step1UploadVideo from './Step1UploadVideo'
-import UploadingBar from '../UploadingBar'
 import Step2Title from './Step2Title'
 import Step3DescriptionAndTime from './Step3DescriptionAndTime'
 import Step4Thumbnail from './Step4Thumbnail'
@@ -38,6 +39,7 @@ const VideoUploader = ({ nextStep }) => {
     setUploadProgress(0)
 
     // Simulate upload progress
+    // TODO: Replace with actual upload logic
     const uploadInterval = setInterval(() => {
       setUploadProgress(prev => {
         if (prev >= 100) {
@@ -51,7 +53,7 @@ const VideoUploader = ({ nextStep }) => {
   }
 
   return (
-    <div className='mt-8 bg-gray-100 p-6 rounded-lg shadow-lg'>
+    <div className='mt-8 bg-[#463D7C] p-6 rounded-lg shadow-lg'>
       {/* Progress Bar */}
       <ProgressBar currentStep={currentStep} setCurrentStep={setCurrentStep} />
 

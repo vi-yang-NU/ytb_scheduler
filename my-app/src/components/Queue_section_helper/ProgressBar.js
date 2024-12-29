@@ -9,12 +9,12 @@ const ProgressBar = ({ currentStep }) => {
           {/* Circle */}
           <div className='relative w-8 h-8 flex items-center justify-center'>
             {/* Static gray circle */}
-            <div className='absolute w-full h-full rounded-full bg-gray-300'></div>
-            
+            <div className='absolute w-full h-full rounded-full bg-transparent outline outline-1 outline-dashed outline-yellow-500'></div>
+
             {/* Animated blue circle */}
             {currentStep > index && (
               <div
-                className='absolute w-full h-full rounded-full bg-blue-500 animate-circle-fill'
+                className='absolute w-full h-full rounded-full bg-yellow-500 animate-circle-fill'
                 style={{
                   clipPath: 'inset(0 100% 0 0)', // Initially fully clipped
                   animation:
@@ -30,7 +30,7 @@ const ProgressBar = ({ currentStep }) => {
           {index < 3 && (
             <div
               className={`flex-grow h-[2px] transition-all duration-500 ${
-                currentStep > index + 1 ? 'bg-blue-500' : 'bg-gray-300'
+                currentStep > index + 1 ? 'bg-indigo-500' : 'bg-black'
               }`}
               style={{
                 transformOrigin: 'left', // Ensures animation originates from the left
