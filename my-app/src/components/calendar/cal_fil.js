@@ -1,23 +1,30 @@
-// src/components/calendar/cal_fill.js
-const videoData = [
-  {
-    title: "Video 1",
-    description: "Description of Video 1",
-    thumbnail: "/thumbnails/tb1.png", // Absolute path from the public folder
-    postingDate: "2024-01-01",
-  },
-  {
-    title: "Video 2",
-    description: "Description of Video 2",
-    thumbnail: "/thumbnails/tb2.png", // Absolute path from the public folder
-    postingDate: "2024-01-02",
-  },
-  {
-    title: "Video 3",
-    description: "Description of Video 3",
-    thumbnail: "/thumbnails/tb3.png", // Absolute path from the public folder
-    postingDate: "2024-01-03",
-  },
-];
+import React from "react";
+import useDataSet from "../../components/Queue_section_helper/hooks/useDataSet"; // Import the custom hook
 
-export default videoData;
+const csvFilePath = "/csv/schedule.csv"; // Path to the CSV file in the public folder
+
+const CalFill = ({ children }) => {
+  const { data: rawData, loading } = useDataSet(csvFilePath);
+
+  console.log("Raw Data in CalFill:", rawData); // Debugging log
+
+  // Transform raw data into the format required
+  const videoData = rawData.map((row) => ({
+    title: row.Title,
+    description: row.Description,
+    thumbnail: `${process.env.PUBLIC_URL}/thumbnails/${row.Thumbnail}.png`, // Ensure the correct absolute path
+    postingDate: row.Posting_date,
+  }));
+
+  if (loading) {
+    return <p className="text-center text-gray-500">Loading...</p>;
+  }
+
+  if (!videoData || videoData.length === 0) {
+    return <p className="text-center text-gray-500">No data available.</p>;
+  }
+
+  return children(videoData); // Pass videoData to children
+};
+
+export default CalFill;
