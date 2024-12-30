@@ -15,8 +15,7 @@ const cal_card = ({ video }) => {
       </div>
 
       {/* Sliding Background */}
-      <div className="absolute top-0 right-[-100%] group-hover:right-0 transition-all duration-100 bg-indigo-800 h-full w-full"></div>
-
+      <div className="absolute top-0 transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 bg-indigo-800 h-full w-full"></div>
       {/* Static Text (Independent from Sliding Background) */}
       <div className="absolute top-0 left-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <h3 className="font-bold text-lg text-white truncate">{title}</h3>

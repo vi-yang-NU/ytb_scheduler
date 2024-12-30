@@ -25,12 +25,12 @@ const App = () => {
 
   return (
     <Router>
-      <div className='min-h-screen bg-[#2E2850] cursor-none relative'>
+      <div className='min-h-screen bg-[#2E2850] relative'>
         {/* Custom Circle Cursor */}
-        <div
+        {/* <div
           className='fixed w-4 h-4 border-2 border-yellow-300 rounded-full pointer-events-none z-50 transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-100'
           style={{ top: `${position.y}px`, left: `${position.x}px` }}
-        ></div>
+        ></div> */}
 
         {/* Routes */}
         <Routes>

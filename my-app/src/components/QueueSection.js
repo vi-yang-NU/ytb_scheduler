@@ -14,7 +14,7 @@ const QueueSection = ({
       <div className='bg-indigo-900 p-6 rounded-lg shadow-md'>
         <div className='mb-4 flex items-center justify-between'>
           <h2 className='text-lg font-bold text-gray-400'>
-            Currently Viewing:{' '}
+            Videos to be posted:{' '}
             <span className='text-indigo-400'>
               {viewMode === 'grid' ? 'Grid View' : 'List View'}
             </span>

@@ -17,6 +17,6 @@ code {
 }
 
 html, body {
-  cursor: none;
+  cursor: pointer; 
   background-color: black;
 }

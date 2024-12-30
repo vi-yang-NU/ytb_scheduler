@@ -23,9 +23,9 @@ const CalendarGrid = ({
         {months[currentMonthIndex]?.days.map((day, dayIndex) => (
           <div
             key={dayIndex}
-            className={`h-32 border border-gray-700 rounded-md relative overflow-hidden transform transition-all duration-500 group ${
+            className={`h-32 border border-gray-700 rounded-md relative overflow-hidden transform transition-all duration-150 group ${
               day === null ? 'bg-gray-800' : 'bg-gray-900'
-            } hover:shadow-glow hover:scale-105`}
+            } hover: hover:scale-105 hover:font-bold hover:text-white hover:border-white`}
             onMouseEnter={(e) => e.currentTarget.classList.add('shadow-glow')}
             onMouseLeave={(e) => e.currentTarget.classList.remove('shadow-glow')}
             onDragOver={(e) => {
