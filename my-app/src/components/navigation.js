@@ -28,7 +28,7 @@ const Navigation = () => {
 
   return (
     <div
-      className="pl-6 pt-6 pb-6 cursor-none"
+      className="pl-6 pt-6 pb-6"
       onMouseEnter={() => setIsExpanded(true)}
       onMouseLeave={() => setIsExpanded(false)}
     >

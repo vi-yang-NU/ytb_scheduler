@@ -6,7 +6,7 @@ const ViewToggle = ({ activeView, setActiveView }) => {
       <button
         className={`px-4 py-2 rounded-l-lg ${
           activeView === "calendar"
-            ? "bg-black text-white"
+            ? "bg-black text-white border border-black"
             : "bg-transparent border border-black text-white"
         }`}
         onClick={() => setActiveView("calendar")}
@@ -16,12 +16,12 @@ const ViewToggle = ({ activeView, setActiveView }) => {
       <button
         className={`px-4 py-2 rounded-r-lg ${
           activeView === "uploadVideos"
-            ? "bg-black text-white"
+            ? "bg-black text-white border border-black"
             : "bg-transparent border border-black text-white"
         }`}
         onClick={() => setActiveView("uploadVideos")}
       >
-        Manage Videos
+        Manage Video
       </button>
     </div>
   );

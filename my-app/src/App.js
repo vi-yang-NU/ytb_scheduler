@@ -9,6 +9,7 @@ import Home from './pages/home'
 
 const App = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 })
+  console.log("App is starting");
 
   // Track mouse movement for the custom cursor
   useEffect(() => {
