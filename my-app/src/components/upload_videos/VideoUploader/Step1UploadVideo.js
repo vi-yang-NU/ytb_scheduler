@@ -16,7 +16,7 @@ const Step1UploadVideo = ({
 
   return (
     <div
-      className={`relative mx-auto w-1/3 transition-transform duration-300 hover:scale-105 ${
+      className={`relative mx-auto w-3/5 transition-transform duration-300 hover:scale-105 ${
         isDragging ? 'border border-indigo-500 bg-indigo-100' : 'border border-indigo-300'
       }`}
       onDrop={handleFileDrop}

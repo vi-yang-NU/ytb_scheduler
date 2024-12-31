@@ -1,5 +1,5 @@
 import React from "react";
-import useDataSet from "../../components/Queue_section_helper/hooks/useDataSet"; // Import the custom hook
+import useDataSet from "../../hooks/useDataSet"; // Import the custom hook
 
 const csvFilePath = "/csv/schedule.csv"; // Path to the CSV file in the public folder
 
