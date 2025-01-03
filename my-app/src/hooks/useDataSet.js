@@ -6,8 +6,8 @@ const useDataSet = (csvPath) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   
-  console.log('Fetching:', csvPath);
-  console.log('State before:', { data, loading });
+  // console.log('Fetching:', csvPath);
+  // console.log('State before:', { data, loading });
 
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const useDataSet = (csvPath) => {
           skipEmptyLines: true,
           transformHeader: (header) => header.trim(), // Trim spaces from headers
           complete: (results) => {
-            console.log('Parsed Data:', results.data);
+            // console.log('Parsed Data:', results.data);
             setData(results.data);
             setLoading(false);
           },
